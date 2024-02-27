@@ -1,4 +1,13 @@
+"use client";
+
+import { Provider } from "react-redux";
+import { store } from "@/lib/store";
+import Nav from "@/components/Nav";
 const page = () => {
-  return <div>page</div>;
+  return (
+    <Provider store={store}>
+      <Nav />
+    </Provider>
+  );
 };
 export default page;
