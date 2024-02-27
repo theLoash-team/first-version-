@@ -2,11 +2,11 @@
 
 import { Provider } from "react-redux";
 import { store } from "@/lib/store";
-import Nav from "@/components/Nav";
+import Header from "@/layout/Header";
 const page = () => {
   return (
     <Provider store={store}>
-      <Nav />
+      <Header />
     </Provider>
   );
 };

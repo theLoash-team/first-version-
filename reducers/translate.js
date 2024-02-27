@@ -6,7 +6,10 @@ const translate_slice = createSlice({
   name: "translate",
   initialState: initialState,
   reducers: {
-    toggling: () => {},
+    toggling: (state, actions) => {
+      state.current_lang = actions.payload.newLang;
+      console.log(state.current_lang);
+    },
   },
 });
 export const { toggling } = translate_slice.actions;
