@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { admin, auth } from "@/firebase/firebaseAdmin";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -8,16 +8,16 @@ export async function POST(req, res) {
   }
 
   try {
-    const { email, password } = req.body;
-    console.log(email, password);
+    const user = req.body;
     // const resp = await createUserWithEmailAndPassword(auth, email, password);
     // console.log(resp);
-    // return NextResponse.json({
-    //   message: "User signed up successfully ",
-    // });
+    return NextResponse.json({
+      message: "User signed up successfully ",
+      user,
+    });
   } catch (error) {
     console.log("error mother fucker");
     // console.log("Error creating user : ", error.message);
-    // return NextResponse.json({ message: "Server Error" });
+    return NextResponse.json({ message: "Server Error" });
   }
 }
