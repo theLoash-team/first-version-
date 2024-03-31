@@ -9,6 +9,5 @@ if (!admin.apps.length) {
     }),
   });
 }
-const auth = admin.auth();
 
-export { auth, admin };
+export { admin };
